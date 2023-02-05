@@ -1,5 +1,3 @@
-# Data-Structures
-
 # Searching
 
 ## Linear search
