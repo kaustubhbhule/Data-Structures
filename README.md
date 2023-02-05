@@ -1,6 +1,6 @@
 # Searching
 
-## Linear search
+## 1) Linear search
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,7 +31,7 @@ int main()
 }
 
 ```
-## Binary search
+## 2) Binary search
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -70,7 +70,7 @@ int main()
 }
 ```
 
-## Fibonacci search
+## 3) Fibonacci search
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -150,7 +150,7 @@ int main()
 
 # Sorting
 
-## Bubble sort
+## 1) Bubble sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -187,7 +187,7 @@ int main()
 
 ```
 
-## Insertion sort
+## 2) Insertion sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -280,7 +280,7 @@ int main()
 }
 ```
 
-## Selection sort
+## 3) Selection sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -316,7 +316,7 @@ int main()
 }
 ```
 
-## Radix sort
+## 4) Radix sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -380,7 +380,7 @@ int main()
     return 0;
 }
 ```
-## Counting sort
+## 5) Counting sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
