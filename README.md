@@ -223,7 +223,7 @@ int main()
     return 0;
 }
 ```
-## Quick sort
+## 3) Quick sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -280,7 +280,7 @@ int main()
 }
 ```
 
-## 3) Selection sort
+## 4) Selection sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -316,7 +316,7 @@ int main()
 }
 ```
 
-## 4) Radix sort
+## 5) Radix sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -380,7 +380,7 @@ int main()
     return 0;
 }
 ```
-## 5) Counting sort
+## 6) Counting sort
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
