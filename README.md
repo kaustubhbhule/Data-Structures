@@ -424,3 +424,190 @@ int main()
     return 0;
 }
 ```
+
+# Data Structures
+
+## Linked List
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+  int data;
+  Node* next;
+};
+
+class LinkedList {
+  private:
+    Node* head;
+
+  public:
+    LinkedList() : head(nullptr) {}
+
+    void insert(int data) {
+      Node* newNode = new Node;
+      newNode->data = data;
+      newNode->next = head;
+      head = newNode;
+    }
+
+    void deleteNode(int data) {
+      Node* current = head;
+      Node* prev = nullptr;
+      while (current != nullptr && current->data != data) {
+        prev = current;
+        current = current->next;
+      }
+      if (current == nullptr) return;
+      prev->next = current->next;
+      delete current;
+    }
+
+    void traverse() {
+      Node* current = head;
+      while (current != nullptr) {
+        cout << current->data << " ";
+        current = current->next;
+      }
+    }
+};
+
+int main() {
+  LinkedList list;
+  list.insert(1);
+  list.insert(2);
+  list.insert(3);
+  list.insert(4);
+  list.deleteNode(2);
+  list.traverse();
+  return 0;
+}
+
+```
+
+## Stack
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+#define MAX_SIZE 100
+
+class Stack {
+  private:
+    int data[MAX_SIZE];
+    int top_index;
+
+  public:
+    Stack() : top_index(-1) {}
+
+    bool isEmpty() {
+      return top_index == -1;
+    }
+
+    bool isFull() {
+      return top_index == MAX_SIZE - 1;
+    }
+
+    void push(int value) {
+      if (isFull()) {
+        cout << "Stack overflow\n";
+        return;
+      }
+      data[++top_index] = value;
+    }
+
+    void pop() {
+      if (isEmpty()) {
+        cout << "Stack underflow\n";
+        return;
+      }
+      --top_index;
+    }
+
+    int top() {
+      if (isEmpty()) {
+        cout << "Stack underflow\n";
+        return -1;
+      }
+      return data[top_index];
+    }
+};
+
+int main() {
+  Stack stack;
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  while (!stack.isEmpty()) {
+    cout << stack.top() << endl;
+    stack.pop();
+  }
+  stack.pop();
+  return 0;
+}
+
+```
+
+## Queue
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+#define MAX_SIZE 100
+
+class Queue {
+  private:
+    int data[MAX_SIZE];
+    int head, tail;
+
+  public:
+    Queue() : head(0), tail(0) {}
+
+    bool isEmpty() {
+      return head == tail;
+    }
+
+    bool isFull() {
+      return (tail + 1) % MAX_SIZE == head;
+    }
+
+    void insert(int value) {
+      if (isFull()) {
+        cout << "Queue overflow\n";
+        return;
+      }
+      data[tail] = value;
+      tail = (tail + 1) % MAX_SIZE;
+    }
+
+    void remove() {
+      if (isEmpty()) {
+        cout << "Queue underflow\n";
+        return;
+      }
+      head = (head + 1) % MAX_SIZE;
+    }
+
+    int front() {
+      if (isEmpty()) {
+        cout << "Queue underflow\n";
+        return -1;
+      }
+      return data[head];
+    }
+};
+
+int main() {
+  Queue queue;
+  queue.insert(1);
+  queue.insert(2);
+  queue.insert(3);
+  while (!queue.isEmpty()) {
+    cout << queue.front() << endl;
+    queue.remove();
+  }
+  queue.remove();
+  return 0;
+}
+
+```
